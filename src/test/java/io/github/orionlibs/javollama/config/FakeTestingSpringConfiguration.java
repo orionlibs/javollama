@@ -1,4 +1,4 @@
-package io.github.orionlibs.project_name.config;
+package io.github.orionlibs.javollama.config;
 
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;

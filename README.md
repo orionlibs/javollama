@@ -1,2 +1,2 @@
-# project-name
-A description
+JavOllama
+Java implementation of the Ollama project 

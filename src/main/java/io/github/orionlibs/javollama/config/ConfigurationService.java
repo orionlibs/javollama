@@ -1,4 +1,4 @@
-package io.github.orionlibs.project_name.config;
+package io.github.orionlibs.javollama.config;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -63,8 +63,8 @@ public class ConfigurationService
     {
         return Boolean.parseBoolean(configurationRegistry.getProperty(key));
     }
-    
-    
+
+
     /**
      * retrieves the value associated with the provided key as an integer
      * @param key

@@ -1,7 +1,7 @@
-package io.github.orionlibs.project_name;
+package io.github.orionlibs.javollama;
 
-import io.github.orionlibs.project_name.config.FakeTestingSpringConfiguration;
-import io.github.orionlibs.project_name.log.ListLogHandler;
+import io.github.orionlibs.javollama.config.FakeTestingSpringConfiguration;
+import io.github.orionlibs.javollama.log.ListLogHandler;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package io.github.orionlibs.project_name.config;
+package io.github.orionlibs.javollama.config;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -16,13 +16,13 @@ public class OrionConfiguration extends Properties
     /**
      * The location of the configuration file that has the logging configuration only e.g. log levels.
      */
-    public static final String LOGGER_CONFIGURATION_FILE = "/io/github/orionlibs/project-name/configuration/orion-logger.prop";
+    public static final String LOGGER_CONFIGURATION_FILE = "/io/github/orionlibs/javollama/configuration/orion-logger.prop";
     /**
      * The location of the configuration file that has configuration for the features of this plugin.
      */
-    public static final String FEATURE_CONFIGURATION_FILE = "/io/github/orionlibs/orion_iot/configuration/orion-feature-configuration.prop";
-    
-    
+    public static final String FEATURE_CONFIGURATION_FILE = "/io/github/orionlibs/javollama/configuration/orion-feature-configuration.prop";
+
+
     public static OrionConfiguration loadLoggerConfigurationAndGet(Environment springEnv) throws IOException
     {
         OrionConfiguration loggerConfiguration = new OrionConfiguration();
@@ -34,7 +34,7 @@ public class OrionConfiguration extends Properties
         }
         catch(IOException e)
         {
-            throw new IOException("Could not setup logger configuration for Orion project-name: ", e);
+            throw new IOException("Could not setup logger configuration for JavOllama: ", e);
         }
     }
 
@@ -50,11 +50,11 @@ public class OrionConfiguration extends Properties
         }
         catch(IOException e)
         {
-            throw new IOException("Could not setup feature configuration for Orion IoT: ", e);
+            throw new IOException("Could not setup feature configuration for JavOllama: ", e);
         }
     }
-    
-    
+
+
     public static OrionConfiguration loadFeatureConfiguration(Environment springEnv) throws IOException
     {
         OrionConfiguration featureConfiguration = new OrionConfiguration();
@@ -66,7 +66,7 @@ public class OrionConfiguration extends Properties
         }
         catch(IOException e)
         {
-            throw new IOException("Could not setup feature configuration for Orion IoT: ", e);
+            throw new IOException("Could not setup feature configuration for JavOllama: ", e);
         }
     }
 
@@ -100,8 +100,8 @@ public class OrionConfiguration extends Properties
         }
         putAll(allProperties);
     }
-    
-    
+
+
     /**
      * It takes default configuration and nullable custom configuration from the Spring environment.
      * For each default configuration property, it registers that one if there is no custom

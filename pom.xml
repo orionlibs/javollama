@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.orionlibs</groupId>
-    <artifactId>project-name</artifactId>
+    <artifactId>javollama</artifactId>
     <version>0.0.1</version>
-    <name>name</name>
-    <description>description</description>
-    <url>https://github.com/orionlibs/project-name</url>
+    <name>JavOllama</name>
+    <description>Java implementation of the Ollama project </description>
+    <url>https://github.com/orionlibs/javollama</url>
     
     
     <properties>
@@ -18,9 +18,9 @@
 
 
     <scm>
-        <url>https://github.com/orionlibs/project-name</url>
-        <connection>scm:git:https://github.com/orionlibs/project-name.git</connection>
-        <developerConnection>scm:git:ssh://github.com/orionlibs/project-name.git</developerConnection>
+        <url>https://github.com/orionlibs/javollama</url>
+        <connection>scm:git:https://github.com/orionlibs/javollama.git</connection>
+        <developerConnection>scm:git:ssh://github.com/orionlibs/javollama.git</developerConnection>
     </scm>
 
 

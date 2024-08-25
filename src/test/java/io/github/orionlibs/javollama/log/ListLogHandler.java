@@ -1,4 +1,4 @@
-package io.github.orionlibs.project_name.log;
+package io.github.orionlibs.javollama.log;
 
 import java.util.ArrayList;
 import java.util.List;

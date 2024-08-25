@@ -1,7 +1,7 @@
-package io.github.orionlibs.project_name;
+package io.github.orionlibs.javollama;
 
-import io.github.orionlibs.project_name.config.ConfigurationService;
-import io.github.orionlibs.project_name.config.OrionConfiguration;
+import io.github.orionlibs.javollama.config.ConfigurationService;
+import io.github.orionlibs.javollama.config.OrionConfiguration;
 import java.io.IOException;
 import java.util.logging.Handler;
 import java.util.logging.LogManager;
@@ -50,8 +50,8 @@ public class NewClass
     {
         log.removeHandler(handler);
     }
-    
-    
+
+
     public static void test()
     {
         log.info("hello world");

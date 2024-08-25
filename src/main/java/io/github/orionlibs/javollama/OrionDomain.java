@@ -1,4 +1,4 @@
-package io.github.orionlibs.project_name;
+package io.github.orionlibs.javollama;
 
 public class OrionDomain
 {

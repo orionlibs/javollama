@@ -1,4 +1,4 @@
-package io.github.orionlibs.project_name.utils;
+package io.github.orionlibs.javollama.utils;
 
 import java.util.HashMap;
 import java.util.Map;
