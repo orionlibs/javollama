@@ -1,6 +1,6 @@
 package io.github.orionlibs.javollama;
 
-final class RoPE
+final class RotaryPositionEmbeddings
 {
     public static Pair<float[], float[]> precomputeFreqsCis(int contextLength, int headSize, double theta,
                     boolean ropeScaling, float scaleFactor, float loFreqFactor, float hiFreqFactor, float oldContextLength)

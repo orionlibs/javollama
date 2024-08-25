@@ -8,7 +8,7 @@ import java.util.Set;
 import java.util.random.RandomGenerator;
 import java.util.random.RandomGeneratorFactory;
 
-public class Llama31
+public class MainLlama31
 {
     public static void main(String[] args) throws IOException
     {

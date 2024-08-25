@@ -49,6 +49,13 @@
 
                 <configuration>
                     <release>${maven.compiler.target}</release>
+
+
+                    <compilerArgs>
+                        <arg>--enable-preview</arg>
+                        <arg>--add-modules</arg>
+                        <arg>jdk.incubator.vector</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 
@@ -63,6 +70,9 @@
                     <systemPropertyVariables>
                         <java.locale.providers>COMPAT,CLDR,SPI,JRE</java.locale.providers>
                     </systemPropertyVariables>
+
+
+                    <argLine>--add-modules jdk.incubator.vector</argLine>
                 </configuration>
             </plugin>
             

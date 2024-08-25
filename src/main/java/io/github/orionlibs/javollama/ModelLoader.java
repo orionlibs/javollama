@@ -61,7 +61,7 @@ final class ModelLoader
             float loFreqFactor = 1;
             float hiFreqFactor = 3;
             int oldContextLength = 8192;
-            Pair<float[], float[]> ropeFreqs = RoPE.precomputeFreqsCis(config.contextLength, config.headSize, config.ropeTheta,
+            Pair<float[], float[]> ropeFreqs = RotaryPositionEmbeddings.precomputeFreqsCis(config.contextLength, config.headSize, config.ropeTheta,
                             ropeScaling, scaleFactor, loFreqFactor, hiFreqFactor, oldContextLength);
             float[] ropeFreqsReal = ropeFreqs.first();
             float[] ropeFreqsImag = ropeFreqs.second();
