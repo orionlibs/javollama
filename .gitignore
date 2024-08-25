@@ -8,3 +8,4 @@
 **/.idea
 **/*.iml
 .pmd
+src/test/resources/io/github/orionlibs/javollama/models
