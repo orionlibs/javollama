@@ -1,1 +1,7 @@
-orionlibs.javollama.enabled=true
+javollama.temperature=0.1
+javollama.randomness=0.95
+javollama.maximum.tokens.to.produce=512
+javollama.interactive.chat=false
+javollama.stream.chat=false
+javollama.echo.chat=false
+javollama.llm.model.path=src/test/resources/io/github/orionlibs/javollama/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf

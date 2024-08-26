@@ -46,7 +46,7 @@ public class MainLlama31Test
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream originalOut = System.out;
         System.setOut(new PrintStream(outputStream));
-        MainLlama31.main(new String[] {"--model=src/test/resources/io/github/orionlibs/javollama/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf", "--prompt=\"Why is the sky blue? Answer in no more than 12 words. Start your answer with the words \"The sky appears blue due to\"\""});
+        new LLM().runLLM("Why is the sky blue? Answer in no more than 12 words. Start your answer with the words \"The sky appears blue due to\"");
         System.setOut(originalOut);
         String capturedOutput = outputStream.toString();
         assertTrue(capturedOutput.startsWith("The sky appears blue due to"));
