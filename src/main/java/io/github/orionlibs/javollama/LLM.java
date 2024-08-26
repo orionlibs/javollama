@@ -24,11 +24,15 @@ import java.util.Set;
 public class LLM
 {
     private LLMOptions options;
+    private Sampler sampler;
+    private LlamaProcessor model;
+    private boolean isModelLoaded;
 
 
-    public LLM()
+    public LLM() throws IOException
     {
         buildLLMOptions();
+        loadModel();
     }
 
 
@@ -36,25 +40,13 @@ public class LLM
     {
         ConfigurationService.registerConfiguration(customConfigStream);
         buildLLMOptions();
+        loadModel();
     }
 
 
-    public Response runLLM(String prompt) throws IOException
+    public Response runLLM(String prompt)
     {
-        Path llmModelPath = Paths.get((String)options.getOptionValue("llmModelPath"));
-        float temperature = (float)options.getOptionValue("temperature");
-        float randomness = (float)options.getOptionValue("randomness");
-        LlamaProcessor model = new LlamaModelLoader().loadModel(llmModelPath, (int)options.getOptionValue("maximumTokensToProduce"));
-        Sampler sampler = SamplerSelector.selectSampler(model.getConfiguration().vocabularySize, temperature, randomness);
         return runPrompt(model, sampler, options, prompt);
-    }
-
-
-    public Response runLLM(InputStream customConfigStream) throws IOException
-    {
-        ConfigurationService.registerConfiguration(customConfigStream);
-        buildLLMOptions();
-        return runLLM((String)null);
     }
 
 
@@ -64,7 +56,21 @@ public class LLM
     }
 
 
-    static Response runPrompt(LlamaProcessor model, Sampler sampler, LLMOptions options, String prompt)
+    private void loadModel() throws IOException
+    {
+        if(!isModelLoaded)
+        {
+            Path llmModelPath = Paths.get((String)options.getOptionValue("llmModelPath"));
+            float temperature = (float)options.getOptionValue("temperature");
+            float randomness = (float)options.getOptionValue("randomness");
+            model = new LlamaModelLoader().loadModel(llmModelPath, (int)options.getOptionValue("maximumTokensToProduce"));
+            sampler = SamplerSelector.selectSampler(model.getConfiguration().vocabularySize, temperature, randomness);
+            isModelLoaded = true;
+        }
+    }
+
+
+    private Response runPrompt(LlamaProcessor model, Sampler sampler, LLMOptions options, String prompt)
     {
         State state = model.createNewState();
         ChatFormat chatFormat = new LlamaChatFormat(model.getTokenizer());

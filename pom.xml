@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.orionlibs</groupId>
     <artifactId>javollama</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <name>JavOllama</name>
     <description>Java implementation of the Ollama project </description>
     <url>https://github.com/orionlibs/javollama</url>
