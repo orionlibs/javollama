@@ -1,6 +1,18 @@
 package io.github.orionlibs.javollama;
 
 import io.github.orionlibs.javollama.config.ConfigurationService;
+import io.github.orionlibs.javollama.core.ChatFormat;
+import io.github.orionlibs.javollama.core.Message;
+import io.github.orionlibs.javollama.core.Role;
+import io.github.orionlibs.javollama.core.State;
+import io.github.orionlibs.javollama.core.sampler.CategoricalSampler;
+import io.github.orionlibs.javollama.core.sampler.Sampler;
+import io.github.orionlibs.javollama.core.sampler.ToppSampler;
+import io.github.orionlibs.javollama.llama.LlamaChatFormat;
+import io.github.orionlibs.javollama.llama.LlamaModelLoader;
+import io.github.orionlibs.javollama.llama.LlamaProcessor;
+import io.github.orionlibs.javollama.options.LLMOptions;
+import io.github.orionlibs.javollama.options.LLMOptionsBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
@@ -34,7 +46,7 @@ public class LLM
         Path llmModelPath = Paths.get((String)options.getOptionValue("llmModelPath"));
         float temperature = (float)options.getOptionValue("temperature");
         float randomness = (float)options.getOptionValue("randomness");
-        Llama model = new LlamaModelLoader().loadModel(llmModelPath, (int)options.getOptionValue("maximumTokensToProduce"));
+        LlamaProcessor model = new LlamaModelLoader().loadModel(llmModelPath, (int)options.getOptionValue("maximumTokensToProduce"));
         Sampler sampler = selectSampler(model.getConfiguration().vocabularySize, temperature, randomness);
         runInstructOnce(model, sampler, options, prompt);
     }
@@ -89,7 +101,7 @@ public class LLM
     }
 
 
-    static void runInstructOnce(Llama model, Sampler sampler, LLMOptions options, String prompt)
+    static void runInstructOnce(LlamaProcessor model, Sampler sampler, LLMOptions options, String prompt)
     {
         State state = model.createNewState();
         ChatFormat chatFormat = new LlamaChatFormat(model.getTokenizer());
