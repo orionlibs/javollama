@@ -17,7 +17,7 @@ import org.springframework.test.context.ActiveProfiles;
 @TestInstance(Lifecycle.PER_CLASS)
 //@Execution(ExecutionMode.CONCURRENT)
 //@RunWith(JUnitPlatform.class)
-public class MainLlama31Test
+public class LLMTest
 {
     private ListLogHandler listLogHandler;
     //@Autowired
