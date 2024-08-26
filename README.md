@@ -1,4 +1,5 @@
 JavOllama
+
 Librarified and slightly refactored version of the [llama3.java](https://github.com/mukel/llama3.java) project. It requires JRE21+. It works with Llama and other LLMs. For more info, please check the link above of the llama3.java project. In order to run this project, you need a copy of a GGUF model like this one: https://huggingface.co/mukel/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf
 
 The Maven coordinates of this library are:
