@@ -3,11 +3,13 @@ Librarified and slightly refactored version of the [llama3.java](https://github.
 
 The Maven coordinates of this library are:
 
+```xml
 <dependency>
     <groupId>io.github.orionlibs</groupId>
     <artifactId>javollama</artifactId>
     <version>1.0.0</version>
 </dependency>
+```
 
 add this line to IntelliJ's compiler settings shared build VM options: --enable-preview --add-modules jdk.incubator.vector
 
