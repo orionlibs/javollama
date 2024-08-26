@@ -8,7 +8,7 @@ The Maven coordinates of this library are:
 <dependency>
     <groupId>io.github.orionlibs</groupId>
     <artifactId>javollama</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 </dependency>
 ```
 
